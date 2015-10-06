@@ -36,7 +36,7 @@ Protocol:
 * Variables: numberLanguages (int)
 * Constant: costPerLanguage
 * Constructors: 4 parameter constructor (string, string, string, int)
-	* Uses the base class constructor
+	* Uses the base class (Droid) constructor
 * Methods:
 	* ToString: return a formatted string containing the variables
 	* CalculateTotalCost: Calculate the totalCost based on the number of languages and adds it to the base totalCost
@@ -44,7 +44,7 @@ Protocol:
 Utility:
 * Variables: toolbox (bool), computerConnection (bool), arm (bool)
 * Constructors: 6 parameter constructor (string, string, string, bool, bool, bool)
-	* Uses the base class constructor
+	* Uses the base class (Droid) constructor
 * Methods:
 	* ToString: return a formatted string containing the variables
 	* CalculateTotalCost: Calculates totalCost by calculating the cost of each selected option and add it to the base totalCost.
@@ -54,7 +54,7 @@ There should be two more derived classes from the class Utility with appropriate
 Janitor:
 * Variables: trashCompactor (bool), vacuum (bool)
 * Constructors: 8 parameter constructor (string, string, string, bool, bool, bool, bool, bool)
-	* Uses the base class constructor
+	* Uses the base class (Utility) constructor
 * Methods:
 	* ToString: return a formatted string containing the variables
 	* CalculateCost: Calculate totalCost by calculating the cost of each selected option and adds it to the base totalCost
@@ -63,8 +63,7 @@ Astromech:
 * Variables: fireExtinquisher (bool), numberShips (int)
 * Constant: costPerShip
 * Constructors: 8 parameter constructor (string, string, string, bool, bool, bool, bool, int)
-	* Uses the base class constructor
-	* Calls CalculateCost
+	* Uses the base class (Utility) constructor
 * Methods:
 	* ToString: return a formatted string containing the variables
 	* CalculateTotalCost: Calculate totalCost by calculating the cost of each selected option and the cost based on the number of ships and adds both to the base CalculateTotalCost
