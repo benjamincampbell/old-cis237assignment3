@@ -75,7 +75,7 @@ You should create a class for the collection of the Droids. It should have an ad
 You should follow the concepts about inheritance talked about in class, and work hard at DRY (Don't Repeat Yourself) Principles.
 
 Solution Must:
-* Create abstract class Droid
+* Create abstract class Droid that implements IDroid
 * Derive two classes (Protocol and Utility) from the class Droid
 * Derive two classes (Janitorial and Astromech) from the class Utility
 * Each derived class must either implement or override the ToString and CalculateTotalCost methods
