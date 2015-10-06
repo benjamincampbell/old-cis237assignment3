@@ -57,7 +57,7 @@ Janitor:
 	* Uses the base class (Utility) constructor
 * Methods:
 	* ToString: return a formatted string containing the variables
-	* CalculateCost: Calculate totalCost by calculating the cost of each selected option and adds it to the base totalCost
+	* CalculateTotalCost: Calculate totalCost by calculating the cost of each selected option and adds it to the base totalCost
 
 Astromech:
 * Variables: fireExtinquisher (bool), numberShips (int)
