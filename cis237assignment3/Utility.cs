@@ -12,10 +12,6 @@ namespace cis237assignment3
         private bool computerConnection;
         private bool arm;
 
-        private string toolboxString;
-        private string connectionString;
-        private string armString;
-
         public bool Toolbox
         {
             get { return toolbox; }
@@ -34,46 +30,18 @@ namespace cis237assignment3
             set { arm = value; }
         }
 
-        public Utility(string Model, string Material, string Color, bool Toolbox, bool ComputerConnection, bool Arm)
-            : base(Model, Material, Color)
+        public Utility(string ID, string Model, string Material, string Color, bool Toolbox, bool ComputerConnection, bool Arm)
+            : base(ID, Model, Material, Color)
         {
-
+            this.toolbox = Toolbox;
+            this.computerConnection = ComputerConnection;
+            this.arm = Arm;
+            this.BaseCost = 15000;
         }
 
         public override string ToString()
         {
-            CheckBools();
-            return base.ToString() + string.Format(" | Toolbox: {0} | Connection: {1} | Arm: {2}", this.toolboxString, this.connectionString, this.armString);
-        }
-
-        protected void CheckBools()
-        {   //This method just turns the Trues and Falses of the bool variables to Yeses and Nos for the purpose of the ToString method
-            if (this.toolbox)
-            {
-                toolboxString = "Yes";
-            }
-            else
-            {
-                toolboxString = "No";
-            }
-
-            if (this.computerConnection)
-            {
-                connectionString = "Yes";
-            }
-            else
-            {
-                connectionString = "No";
-            }
-
-            if (this.arm)
-            {
-                armString = "Yes";
-            }
-            else
-            {
-                armString = "No";
-            }
+            return base.ToString() + string.Format(" | Toolbox: {0} | Connection: {1} | Arm: {2}", this.toolbox, this.computerConnection, this.arm);
         }
 
         public override double CalculateBaseCost()

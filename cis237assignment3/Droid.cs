@@ -13,6 +13,13 @@ namespace cis237assignment3
         private string color;
         private double baseCost;
         private decimal totalCost;
+        private string id;
+
+        public string Id
+        {
+            get { return id; }
+            set { id = value; }
+        }
 
         public double BaseCost
         {
@@ -34,15 +41,19 @@ namespace cis237assignment3
             get { return material; }
             set { material = value; }
         }
+
         public decimal TotalCost
         {
             get { return totalCost; }
             set { totalCost = value; }
         }
 
-        public Droid(string Model, string Material, string Color)
+        public Droid(string ID, string Model, string Material, string Color)
         {
-
+            this.id = ID;
+            this.model = Model;
+            this.material = Material;
+            this.color = Color;
         }
 
         public Droid()
@@ -52,11 +63,12 @@ namespace cis237assignment3
 
         public override string ToString()
         {
-            return string.Format("{0} Droid | Material: {1} | Color: {2}", this.model, this.material, this.color);
+            return string.Format("ID: {0} | {1} Droid | Material: {2} | Color: {3}", this.id, this.model, this.material, this.color);
         }
 
         public abstract double CalculateBaseCost();
 
         public abstract void CalculateTotalCost();
+
     }
 }

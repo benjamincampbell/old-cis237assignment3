@@ -9,12 +9,13 @@ namespace cis237assignment3
     class Protocol : Droid
     {
         private int numberLanguages;
-        private const int costPerLanguage = 5000;
+        private const int costPerLanguage = 1000;
 
-        public Protocol(string Model, string Material, string Color, int NumberLanguages)
-            : base(Model, Material, Color)
+        public Protocol(string ID, string Model, string Material, string Color, int NumberLanguages)
+            : base(ID, Model, Material, Color)
         {
-
+            this.numberLanguages = NumberLanguages;
+            this.BaseCost = 10000;
         }
 
         public override string ToString()

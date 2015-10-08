@@ -24,8 +24,8 @@ namespace cis237assignment3
                         UI.PrintDroidList();
                         break;
                     case 2:
-                        //droidCollector.addDroid(UI.GetDroidInfo())
-;                        break;
+                        UI.AddDroid();
+;                       break;
                     default:
                         break;
                 }
