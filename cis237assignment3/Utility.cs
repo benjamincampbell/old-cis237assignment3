@@ -30,8 +30,8 @@ namespace cis237assignment3
             set { arm = value; }
         }
 
-        public Utility(string ID, string Model, string Material, string Color, bool Toolbox, bool ComputerConnection, bool Arm)
-            : base(ID, Model, Material, Color)
+        public Utility(string Model, string Material, string Color, bool Toolbox, bool ComputerConnection, bool Arm)
+            : base(Model, Material, Color)
         {
             this.CalculateBaseCost();
             this.toolbox = Toolbox;

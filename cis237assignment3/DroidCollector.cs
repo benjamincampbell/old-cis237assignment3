@@ -28,29 +28,29 @@ namespace cis237assignment3
 
         }
 
-        public void addDroid(string ID, string Model, string Material, string Color, int NumberLanguages)
+        public void addDroid(string Model, string Material, string Color, int NumberLanguages)
         {
-            Protocol newDroid = new Protocol(ID, Model, Material, Color, NumberLanguages);
+            Protocol newDroid = new Protocol(Model, Material, Color, NumberLanguages);
             droidList.Add(newDroid);
         }
 
-        public void addDroid(string ID, string Model, string Material, string Color, bool Toolbox, bool ComputerConnection, bool Arm)
+        public void addDroid(string Model, string Material, string Color, bool Toolbox, bool ComputerConnection, bool Arm)
         {
-            Utility newDroid = new Utility(ID, Model, Material, Color, Toolbox, ComputerConnection, Arm);
-            droidList.Add(newDroid);
-
-        }
-
-        public void addDroid(string ID, string Model, string Material, string Color, bool Toolbox, bool ComputerConnection, bool Arm, bool TrashCompactor, bool Vacuum)
-        {
-            Janitor newDroid = new Janitor(ID, Model, Material, Color, Toolbox, ComputerConnection, Arm, TrashCompactor, Vacuum);
+            Utility newDroid = new Utility(Model, Material, Color, Toolbox, ComputerConnection, Arm);
             droidList.Add(newDroid);
 
         }
 
-        public void addDroid(string ID, string Model, string Material, string Color, bool Toolbox, bool ComputerConnection, bool Arm, bool FireExtinguisher, int NumberShips)
+        public void addDroid(string Model, string Material, string Color, bool Toolbox, bool ComputerConnection, bool Arm, bool TrashCompactor, bool Vacuum)
         {
-            Astromech newDroid = new Astromech(ID, Model, Material, Color, Toolbox, ComputerConnection, Arm, FireExtinguisher, NumberShips);
+            Janitor newDroid = new Janitor(Model, Material, Color, Toolbox, ComputerConnection, Arm, TrashCompactor, Vacuum);
+            droidList.Add(newDroid);
+
+        }
+
+        public void addDroid(string Model, string Material, string Color, bool Toolbox, bool ComputerConnection, bool Arm, bool FireExtinguisher, int NumberShips)
+        {
+            Astromech newDroid = new Astromech(Model, Material, Color, Toolbox, ComputerConnection, Arm, FireExtinguisher, NumberShips);
             droidList.Add(newDroid);
 
         }

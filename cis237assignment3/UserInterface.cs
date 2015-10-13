@@ -54,9 +54,6 @@ namespace cis237assignment3
 
             }
 
-            Console.WriteLine("Enter ID: ");        //All of these are necessary for all droids
-            string userID = Console.ReadLine().Trim();
-
             Console.WriteLine("Enter Material: " + Environment.NewLine +
                               "Available materials: " + printStringArray(availableMaterials));
             string userMaterial = Console.ReadLine().Trim().ToUpper();
@@ -73,7 +70,7 @@ namespace cis237assignment3
             {   //Protocol Droid
                 Console.WriteLine("Enter number of languages: ");
                 int userLanguages = Int32.Parse(Console.ReadLine().Trim());
-                collector.addDroid(userID, userModel, userMaterial, userColor, userLanguages);
+                collector.addDroid(userModel, userMaterial, userColor, userLanguages);
             }
             else
             {   //Utility, Janitor, or Astromech droid
@@ -86,7 +83,7 @@ namespace cis237assignment3
 
                 if (userModel == availableModels[1])
                 {   //Utility Droid
-                    collector.addDroid(userID, userModel, userMaterial, userColor, userToolbox, userCompConn, userArm);
+                    collector.addDroid(userModel, userMaterial, userColor, userToolbox, userCompConn, userArm);
                 }
 
                 if (userModel == availableModels[2])
@@ -95,7 +92,7 @@ namespace cis237assignment3
                     bool userTrash = sortBool(Console.ReadLine().Trim().ToUpper());
                     Console.WriteLine("Vacuum? Y or N: ");
                     bool userVacuum = sortBool(Console.ReadLine().Trim().ToUpper());
-                    collector.addDroid(userID, userModel, userMaterial, userColor, userToolbox, userCompConn, userArm, userTrash, userVacuum);
+                    collector.addDroid(userModel, userMaterial, userColor, userToolbox, userCompConn, userArm, userTrash, userVacuum);
                 }
 
                 if (userModel.ToUpper() == availableModels[3])
@@ -104,7 +101,7 @@ namespace cis237assignment3
                     bool userFire = sortBool(Console.ReadLine().Trim().ToUpper());
                     Console.WriteLine("Enter number of ships: ");
                     int userShips = Int32.Parse(Console.ReadLine().Trim());
-                    collector.addDroid(userID, userModel, userMaterial, userColor, userToolbox, userCompConn, userArm, userFire, userShips);
+                    collector.addDroid(userModel, userMaterial, userColor, userToolbox, userCompConn, userArm, userFire, userShips);
                 }
             }
         }
