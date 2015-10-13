@@ -14,7 +14,7 @@ namespace cis237assignment3
         public Astromech(string ID, string Model, string Material, string Color, bool Toolbox, bool ComputerConnection, bool Arm, bool FireExtinguisher, int NumberShips)
             : base(ID, Model, Material, Color, Toolbox, ComputerConnection, Arm)
         {
-            this.BaseCost = 20000;
+            this.BaseCost = 10000;
             this.fireExtinguisher = FireExtinguisher;
             this.numberShips = NumberShips;
         }

@@ -16,6 +16,7 @@ namespace cis237assignment3
         {
             this.numberLanguages = NumberLanguages;
             this.BaseCost = 10000;
+            CalculateTotalCost();
         }
 
         public override string ToString()
@@ -26,11 +27,12 @@ namespace cis237assignment3
         public override void CalculateTotalCost()
         {
             double languagesCost = this.numberLanguages * costPerLanguage;
+            TotalCost = Convert.ToDecimal(BaseCost + languagesCost);
         }
 
-        public override double CalculateBaseCost()
+        public override void CalculateBaseCost()
         {
-            return this.BaseCost;
+
         }
     }
 }

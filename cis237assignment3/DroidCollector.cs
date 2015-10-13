@@ -21,7 +21,7 @@ namespace cis237assignment3
 
             foreach (var droid in droidList)
             {
-                droidListString += droid.ToString() + Environment.NewLine;
+                droidListString += droid.ToString() + " | Price: " + droid.TotalCost + Environment.NewLine;
             }
 
             return droidListString;

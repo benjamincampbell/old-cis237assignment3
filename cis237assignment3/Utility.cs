@@ -33,10 +33,12 @@ namespace cis237assignment3
         public Utility(string ID, string Model, string Material, string Color, bool Toolbox, bool ComputerConnection, bool Arm)
             : base(ID, Model, Material, Color)
         {
+            this.CalculateBaseCost();
             this.toolbox = Toolbox;
             this.computerConnection = ComputerConnection;
             this.arm = Arm;
             this.BaseCost = 15000;
+            this.CalculateTotalCost();
         }
 
         public override string ToString()
@@ -44,14 +46,29 @@ namespace cis237assignment3
             return base.ToString() + string.Format(" | Toolbox: {0} | Connection: {1} | Arm: {2}", this.toolbox, this.computerConnection, this.arm);
         }
 
-        public override double CalculateBaseCost()
+        public override void CalculateBaseCost()
         {
-            return this.BaseCost;
+
         }
 
         public override void CalculateTotalCost()
         {
-            throw new NotImplementedException();
+            if (toolbox)
+            {   //Add to TotalCost based on features added or not
+                this.TotalCost += 1000;
+            }
+
+            if (computerConnection)
+            {
+                this.TotalCost += 2000;
+            }
+
+            if (arm)
+            {
+                this.TotalCost += 1000;
+            }
+                //Always add the base cost
+            this.TotalCost += Convert.ToDecimal(this.BaseCost);
         }
     }
 }

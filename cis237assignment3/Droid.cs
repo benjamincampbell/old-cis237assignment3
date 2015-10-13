@@ -54,6 +54,7 @@ namespace cis237assignment3
             this.model = Model;
             this.material = Material;
             this.color = Color;
+            this.CalculateBaseCost();
         }
 
         public Droid()
@@ -66,7 +67,23 @@ namespace cis237assignment3
             return string.Format("ID: {0} | {1} Droid | Material: {2} | Color: {3}", this.id, this.model, this.material, this.color);
         }
 
-        public abstract double CalculateBaseCost();
+        public virtual void CalculateBaseCost()
+        {
+            if (this.material == "ALUMINIUM")
+            {
+                this.baseCost = 10000;
+            }
+
+            if (this.material == "TITANIUM")
+            {
+                this.baseCost = 15000;
+            }
+
+            if (this.material == "AGRINIUM")
+            {
+                this.baseCost = 20000;
+            }
+        }
 
         public abstract void CalculateTotalCost();
 
