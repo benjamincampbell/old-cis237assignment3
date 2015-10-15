@@ -107,7 +107,14 @@ namespace cis237assignment3
         }
 
         private bool sortBool(string userInput)
-        {
+        {   //This method takes user input Y or N and turns it into a boolean true or false that is returned
+
+            while (userInput != "Y" || userInput != "N")
+            {
+                Console.WriteLine("Please enter Y or N");
+                userInput = Console.ReadLine().Trim().ToUpper();
+            }
+
             if (userInput == "Y")
             {
                 return true;

@@ -10,6 +10,7 @@ namespace cis237assignment3
     {
         private bool fireExtinguisher;
         private int numberShips;
+        private const int COSTPERSHIP = 4000;
 
         public Astromech(string Model, string Material, string Color, bool Toolbox, bool ComputerConnection, bool Arm, bool FireExtinguisher, int NumberShips)
             : base(Model, Material, Color, Toolbox, ComputerConnection, Arm)
@@ -22,6 +23,18 @@ namespace cis237assignment3
         public override string ToString()
         {
             return base.ToString() + string.Format(" | Fire Extinguisher: {0} | Ships: {1}", this.fireExtinguisher, this.numberShips);
+        }
+
+        public override void CalculateTotalCost()
+        {
+            base.CalculateTotalCost();
+
+            if (this.fireExtinguisher)
+            {
+                this.TotalCost += 5000;
+            }
+
+            TotalCost += Convert.ToDecimal(this.numberShips * COSTPERSHIP);
         }
     }
 }
