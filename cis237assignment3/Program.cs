@@ -1,4 +1,9 @@
-﻿using System;
+﻿/*  Assignment: cis237assigment3
+    File: Program.cs
+    Author: Benjamin M. Campbell
+ */
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;

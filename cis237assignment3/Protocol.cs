@@ -1,4 +1,9 @@
-﻿using System;
+﻿/*  Assignment: cis237assigment3
+    File: Protocol.cs
+    Author: Benjamin M. Campbell
+ */
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,7 +20,7 @@ namespace cis237assignment3
             : base(Model, Material, Color)
         {
             this.numberLanguages = NumberLanguages;
-            this.BaseCost = 10000;
+            this.BaseCost += 10000;
             this.CalculateTotalCost();
         }
 
@@ -27,12 +32,7 @@ namespace cis237assignment3
         public override void CalculateTotalCost()
         {
             double languagesCost = this.numberLanguages * COSTPERLANGUAGE;
-            this.TotalCost = Convert.ToDecimal(this.BaseCost + languagesCost);
-        }
-
-        public override void CalculateBaseCost()
-        {
-
+            this.TotalCost = this.BaseCost + languagesCost;
         }
     }
 }

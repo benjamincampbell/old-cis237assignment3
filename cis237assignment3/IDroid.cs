@@ -1,4 +1,9 @@
-﻿using System;
+﻿/*  Assignment: cis237assigment3
+    File: IDroid.cs
+    Author: Benjamin M. Campbell
+ */
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,6 +15,6 @@ namespace cis237assignment3
     {
         void CalculateTotalCost();
 
-        decimal TotalCost { get; set; }
+        double TotalCost { get; set; }
     }
 }

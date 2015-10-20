@@ -1,4 +1,9 @@
-﻿using System;
+﻿/*  Assignment: cis237assigment3
+    File: Astromech.cs
+    Author: Benjamin M. Campbell
+ */
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,7 +20,7 @@ namespace cis237assignment3
         public Astromech(string Model, string Material, string Color, bool Toolbox, bool ComputerConnection, bool Arm, bool FireExtinguisher, int NumberShips)
             : base(Model, Material, Color, Toolbox, ComputerConnection, Arm)
         {
-            this.BaseCost = 10000;
+            this.BaseCost += 10000;
             this.fireExtinguisher = FireExtinguisher;
             this.numberShips = NumberShips;
         }
@@ -34,7 +39,7 @@ namespace cis237assignment3
                 this.TotalCost += 5000;
             }
 
-            TotalCost += Convert.ToDecimal(this.numberShips * COSTPERSHIP);
+            TotalCost += this.numberShips * COSTPERSHIP;
         }
     }
 }

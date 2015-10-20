@@ -1,4 +1,9 @@
-﻿using System;
+﻿/*  Assignment: cis237assigment3
+    File: Utility.cs
+    Author: Benjamin M. Campbell
+ */
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -37,18 +42,13 @@ namespace cis237assignment3
             this.toolbox = Toolbox;
             this.computerConnection = ComputerConnection;
             this.arm = Arm;
-            this.BaseCost = 15000;
+            this.BaseCost += 15000;
             this.CalculateTotalCost();
         }
 
         public override string ToString()
         {
             return base.ToString() + string.Format(" | Toolbox: {0} | Connection: {1} | Arm: {2}", this.toolbox, this.computerConnection, this.arm);
-        }
-
-        public override void CalculateBaseCost()
-        {
-
         }
 
         public override void CalculateTotalCost()
@@ -68,7 +68,7 @@ namespace cis237assignment3
                 this.TotalCost += 1000;
             }
                 //Always add the base cost
-            this.TotalCost += Convert.ToDecimal(this.BaseCost);
+            this.TotalCost += this.BaseCost;
         }
     }
 }

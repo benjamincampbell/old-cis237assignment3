@@ -1,4 +1,9 @@
-﻿using System;
+﻿/*  Assignment: cis237assigment3
+    File: Droid.cs
+    Author: Benjamin M. Campbell
+ */
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,7 +17,7 @@ namespace cis237assignment3
         private string model;
         private string color;
         private double baseCost;
-        private decimal totalCost;
+        private double totalCost;
 
         public double BaseCost
         {
@@ -35,7 +40,7 @@ namespace cis237assignment3
             set { material = value; }
         }
 
-        public decimal TotalCost
+        public double TotalCost
         {
             get { return totalCost; }
             set { totalCost = value; }
@@ -46,7 +51,7 @@ namespace cis237assignment3
             this.model = Model;
             this.material = Material;
             this.color = Color;
-            this.CalculateBaseCost();
+            CalculateBaseCost();
         }
 
         public Droid()

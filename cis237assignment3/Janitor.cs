@@ -1,4 +1,9 @@
-﻿using System;
+﻿/*  Assignment: cis237assigment3
+    File: Janitor.cs
+    Author: Benjamin M. Campbell
+ */
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,7 +21,7 @@ namespace cis237assignment3
         {
             this.trashCompactor = TrashCompactor;
             this.vacuum = Vacuum;
-            this.BaseCost = 5000;
+            this.BaseCost += 5000;
         }
 
         public override string ToString()

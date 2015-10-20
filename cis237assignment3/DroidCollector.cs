@@ -1,4 +1,9 @@
-﻿using System;
+﻿/*  Assignment: cis237assigment3
+    File: DroidCollector.cs
+    Author: Benjamin M. Campbell
+ */
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -28,6 +33,9 @@ namespace cis237assignment3
 
         }
 
+
+        //These are the overloaded methods that determine what kind of droid we are making based on the number
+        //of arguments passed in from the UserInterface
         public void addDroid(string Model, string Material, string Color, int NumberLanguages)
         {
             Protocol newDroid = new Protocol(Model, Material, Color, NumberLanguages);

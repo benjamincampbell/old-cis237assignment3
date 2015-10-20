@@ -1,4 +1,9 @@
-﻿using System;
+﻿/*  Assignment: cis237assigment3
+    File: UserInterface.cs
+    Author: Benjamin M. Campbell
+ */
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,8 +14,11 @@ namespace cis237assignment3
     class UserInterface
     {
         private DroidCollector collector;
+
+        //Arrays containing the available options for models and materials
         string[] availableModels = { "PROTOCOL", "UTILITY", "JANITOR", "ASTROMECH" };
         string[] availableMaterials = { "ALUMINIUM", "TITANIUM", "AGRINIUM" };
+        string[] availableColors = { "RED", "GREEN", "PURPLE", "GRAY" };
 
         public UserInterface(DroidCollector DroidCollector)
         {
@@ -18,7 +26,7 @@ namespace cis237assignment3
         }
 
         public int ShowMenu()
-        {
+        {   //Method to show menu, ask for the selection, and return it
             Console.WriteLine("Welcome to the Droid Management System, v. 0.1" + Environment.NewLine +
                    "Please choose a command:" + Environment.NewLine +
                    "1: Print Droid List" + Environment.NewLine +
@@ -28,12 +36,12 @@ namespace cis237assignment3
         }
 
         public void PrintDroidList()
-        {
+        {   //Method to print the list of droids we get from the DroidCollector
             Console.WriteLine(collector.GetDroidList());
         }
 
         private string printStringArray(string[] array)
-        {
+        {   //Method to quickly and cleanly print string arrays (used for printing available models and materials
             string result = "";
             foreach (string item in array)
             {
@@ -63,8 +71,14 @@ namespace cis237assignment3
                 userMaterial = Console.ReadLine().Trim().ToUpper();
             }
 
-            Console.WriteLine("Enter Color: ");
-            string userColor = Console.ReadLine().Trim();
+            Console.WriteLine("Enter Color: " + Environment.NewLine + 
+                              "Available colors: " + printStringArray(availableColors));
+            string userColor = Console.ReadLine().Trim().ToUpper();
+            while (!availableColors.Contains(userColor))
+            {   //Make sure chosen material is available
+                Console.WriteLine("Material not available, please enter different matieral.");
+                userColor = Console.ReadLine().Trim().ToUpper();
+            }
 
             if (userModel == availableModels[0])
             {   //Protocol Droid
@@ -108,8 +122,9 @@ namespace cis237assignment3
 
         private bool sortBool(string userInput)
         {   //This method takes user input Y or N and turns it into a boolean true or false that is returned
+            string[] validInput = {"Y", "N"};
 
-            while (userInput != "Y" || userInput != "N")
+            while (!validInput.Contains(userInput))
             {
                 Console.WriteLine("Please enter Y or N");
                 userInput = Console.ReadLine().Trim().ToUpper();
